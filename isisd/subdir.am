@@ -128,6 +128,8 @@ isisd_libisis_a_SOURCES = \
 	isisd/isis_cli.c \
 	#end
 
+isisd_libisis_a_CFLAGS = -fPIC
+
 clippy_scan += \
 	isisd/isis_cli.c \
 	# end
@@ -138,6 +140,9 @@ nodist_isisd_isisd_SOURCES = \
 	yang/frr-isisd.yang.c \
 	# end
 	
+isisd_isisd_LDFLAGS= -rdynamic -pie
+isisd_isisd_CFLAGS = -fPIC
+
 # Building fabricd
 
 FABRICD_CPPFLAGS = -DFABRICD=1 $(AM_CPPFLAGS)
